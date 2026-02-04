@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "Inventory Mobile",
+    "slug": "inventory-mobile",
+    "scheme": "inventorymobile",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "entryPoint": "./App/index.js",
+    "jsEngine": "hermes",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Allow Inventory Mobile to capture your location when submitting orders and recoveries.",
+        "NSCameraUsageDescription": "Allow Inventory Mobile to use your camera for capturing receipt photos.",
+        "NSPhotoLibraryUsageDescription": "Allow Inventory Mobile to access your photo library to attach receipts.",
+        "NSPhotoLibraryAddUsageDescription": "Allow Inventory Mobile to save receipt images to your photo library."
+      }
+    },
+    "android": {
+      "package": "com.inventory.mobile",
+      "usesCleartextTraffic": true,
+      "minSdkVersion": 26,
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "CAMERA",
+        "READ_MEDIA_IMAGES"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-secure-store",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow Inventory Mobile to capture your location when submitting orders and recoveries."
+        }
+      ],
+      "expo-image-picker"
+    ]
+  }
+}

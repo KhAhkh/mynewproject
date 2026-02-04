@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: inventory-backend
+Version: 0.1.0
+Summary: Inventory auth and sync service
+Requires-Python: >=3.11
+Requires-Dist: fastapi>=0.115.0
+Requires-Dist: uvicorn[standard]>=0.30.0
+Requires-Dist: sqlmodel>=0.0.22
+Requires-Dist: pydantic-settings>=2.4.0
+Requires-Dist: passlib[bcrypt]>=1.7.4
+Requires-Dist: pyjwt>=2.9.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.3.0; extra == "dev"
+Requires-Dist: httpx>=0.27.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.23.7; extra == "dev"

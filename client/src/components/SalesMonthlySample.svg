@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="420" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #f8fafc }
+    .axis { stroke: #94a3b8; stroke-width: 1 }
+    .grid { stroke: #e2e8f0 }
+    .bar { fill: #22c55e }
+    .label { fill: #475569; font-family: Inter, Arial, sans-serif; font-size: 12px }
+    .title { fill: #0f172a; font-family: Inter, Arial, sans-serif; font-size: 18px; font-weight: 600 }
+    .ytext { fill: #64748b; font-size: 11px }
+    .value { fill: #0b1220; font-size: 11px; font-weight: 600 }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="900" height="420" rx="8" />
+
+  <text x="40" y="34" class="title">Monthly Sales — 2025</text>
+
+  <!-- y-axis grid and labels -->
+  <g transform="translate(80,60)">
+    <!-- grid lines and labels -->
+    <!-- assume max ~ 1,200,000 for sample -->
+    <g>
+      <line x1="0" y1="0" x2="720" y2="0" class="grid" />
+      <text x="-10" y="0" text-anchor="end" class="ytext">Rs 1,200,000</text>
+    </g>
+    <g transform="translate(0,72)">
+      <line x1="0" y1="0" x2="720" y2="0" class="grid" />
+      <text x="-10" y="0" text-anchor="end" class="ytext">Rs 900,000</text>
+    </g>
+    <g transform="translate(0,144)">
+      <line x1="0" y1="0" x2="720" y2="0" class="grid" />
+      <text x="-10" y="0" text-anchor="end" class="ytext">Rs 600,000</text>
+    </g>
+    <g transform="translate(0,216)">
+      <line x1="0" y1="0" x2="720" y2="0" class="grid" />
+      <text x="-10" y="0" text-anchor="end" class="ytext">Rs 300,000</text>
+    </g>
+    <g transform="translate(0,288)">
+      <line x1="0" y1="0" x2="720" y2="0" class="grid" />
+      <text x="-10" y="0" text-anchor="end" class="ytext">Rs 0</text>
+    </g>
+
+    <!-- x-axis and bars -->
+    <g transform="translate(0,0)">
+      <!-- Bars: 12 months -->
+      <!-- x step: 60, bar width: 36, left padding: 12 -->
+      <!-- sample monthly totals (Rs): Jan:120000, Feb:180000, Mar:400000, Apr:600000, May:800000, Jun:700000, Jul:500000, Aug:300000, Sep:450000, Oct:900000, Nov:1100000, Dec:950000 -->
+      <!-- scale: map 0..1,200,000 -> 288px height (from y=288 to y=0) -->
+      <!-- helper: y = 288 - (value / 1200000) * 288 -->
+
+      <!-- Month 1: Jan -->
+      <g transform="translate(12,0)">
+        <rect class="bar" fill="hsl(0, 70%, 45%)" x="0" y="225" width="36" height="63" rx="6" />
+        <text x="18" y="305" class="label" text-anchor="middle">Jan</text>
+        <text x="18" y="214" class="value" text-anchor="middle">Rs 120k</text>
+      </g>
+
+      <!-- Feb -->
+      <g transform="translate(72,0)">
+        <rect class="bar" fill="hsl(30, 70%, 45%)" x="0" y="201" width="36" height="87" rx="6" />
+        <text x="18" y="305" class="label" text-anchor="middle">Feb</text>
+        <text x="18" y="190" class="value" text-anchor="middle">Rs 180k</text>
+      </g>
+
+      <!-- Mar -->
+      <g transform="translate(132,0)">
+        <rect class="bar" fill="hsl(60, 70%, 45%)" x="0" y="144" width="36" height="144" rx="6" />
+        <text x="18" y="305" class="label" text-anchor="middle">Mar</text>
+        <text x="18" y="132" class="value" text-anchor="middle">Rs 400k</text>
+      </g>
+
+      <!-- Apr -->
+      <g transform="translate(192,0)">
+        <rect class="bar" fill="hsl(90, 70%, 45%)" x="0" y="96" width="36" height="192" rx="6" />
+        <text x="18" y="305" class="label" text-anchor="middle">Apr</text>
+        <text x="18" y="84" class="value" text-anchor="middle">Rs 600k</text>
+      </g>
+
+      <!-- May -->
+      <g transform="translate(252,0)">
+        <rect class="bar" fill="hsl(120, 70%, 45%)" x="0" y="48" width="36" height="240" rx="6" />
+        <text x="18" y="305" class="label" text-anchor="middle">May</text>
+        <text x="18" y="36" class="value" text-anchor="middle">Rs 800k</text>
+      </g>
+
+      <!-- Jun -->
+      <g transform="translate(312,0)">
+        <rect class="bar" fill="hsl(150, 70%, 45%)" x="0" y="72" width="36" height="216" rx="6" />
+        <text x="18" y="305" class="label" text-anchor="middle">Jun</text>
+        <text x="18" y="60" class="value" text-anchor="middle">Rs 700k</text>
+      </g>
+
+      <!-- Jul -->
+      <g transform="translate(372,0)">
+        <rect class="bar" fill="hsl(180, 70%, 45%)" x="0" y="120" width="36" height="168" rx="6" />
+        <text x="18" y="305" class="label" text-anchor="middle">Jul</text>
+        <text x="18" y="108" class="value" text-anchor="middle">Rs 500k</text>
+      </g>
+
+      <!-- Aug -->
+      <g transform="translate(432,0)">
+        <rect class="bar" fill="hsl(210, 70%, 45%)" x="0" y="192" width="36" height="96" rx="6" />
+        <text x="18" y="305" class="label" text-anchor="middle">Aug</text>
+        <text x="18" y="180" class="value" text-anchor="middle">Rs 300k</text>
+      </g>
+
+      <!-- Sep -->
+      <g transform="translate(492,0)">
+        <rect class="bar" fill="hsl(240, 70%, 45%)" x="0" y="156" width="36" height="132" rx="6" />
+        <text x="18" y="305" class="label" text-anchor="middle">Sep</text>
+        <text x="18" y="144" class="value" text-anchor="middle">Rs 450k</text>
+      </g>
+
+      <!-- Oct -->
+      <g transform="translate(552,0)">
+        <rect class="bar" fill="hsl(270, 70%, 45%)" x="0" y="48" width="36" height="240" rx="6" />
+        <text x="18" y="305" class="label" text-anchor="middle">Oct</text>
+        <text x="18" y="36" class="value" text-anchor="middle">Rs 900k</text>
+      </g>
+
+      <!-- Nov -->
+      <g transform="translate(612,0)">
+        <rect class="bar" fill="hsl(300, 70%, 45%)" x="0" y="0" width="36" height="288" rx="6" />
+        <text x="18" y="305" class="label" text-anchor="middle">Nov</text>
+        <text x="18" y="-12" class="value" text-anchor="middle">Rs 1.1M</text>
+      </g>
+
+      <!-- Dec -->
+      <g transform="translate(672,0)">
+        <rect class="bar" fill="hsl(330, 70%, 45%)" x="0" y="36" width="36" height="252" rx="6" />
+        <text x="18" y="305" class="label" text-anchor="middle">Dec</text>
+        <text x="18" y="24" class="value" text-anchor="middle">Rs 950k</text>
+      </g>
+
+    </g>
+
+    <!-- x-axis line -->
+    <line x1="0" y1="288" x2="720" y2="288" class="axis" />
+  </g>
+
+  <!-- small footer -->
+  <text x="40" y="400" class="label">Generated sample: month-wise sales bar chart</text>
+</svg>

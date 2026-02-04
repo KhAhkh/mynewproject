@@ -1,0 +1,11 @@
+import Database from 'better-sqlite3';
+import { DB_FILE } from '../src/config.js';
+const db = new Database(DB_FILE, { readonly: true });
+const cols = db.prepare("PRAGMA table_info(users)").all();
+const hasPasswordCol = cols.some(c => c.name === 'password');
+const hasHashCol = cols.some(c => c.name === 'password_hash');
+const selectCols = ['id', 'username', 'role', 'is_active'];
+if (hasPasswordCol) selectCols.push('password');
+if (hasHashCol) selectCols.push('password_hash');
+const rows = db.prepare(`SELECT ${selectCols.join(', ')} FROM users`).all();
+console.log(JSON.stringify({ hasPasswordCol, hasHashCol, rows }, null, 2));
